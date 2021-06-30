@@ -19,6 +19,7 @@
     min-width: 900px;
     background-color: #fff;
     display: flex;
+    border: 1px solid black;
 }
 
 header {
@@ -44,7 +45,7 @@ header i {
 }
 
 header i:hover {
-    color: #0bceba;
+    color: #009688;
 }
 
 .icons i {
@@ -57,6 +58,10 @@ header i:hover {
     background-color: #fff;
     border-right: 1px solid #d6d6d6;
     overflow-y: auto;
+}
+
+.side ul{
+    padding-left: 0!important ;
 }
 
 .side-user{
@@ -75,7 +80,7 @@ header i:hover {
 }
 
 .notice:hover {
-    background-color: #0bceba;
+    background-color: #009688;
 }
 
 .notice .informations p {
@@ -88,8 +93,8 @@ header i:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 45px;
-    height: 45px;
+    min-width: 45px;
+    min-height: 45px;
     margin-right: 10px;
     border-radius: 50%;
     background-color: #fff;
@@ -135,7 +140,7 @@ header i:hover {
 
 .contacts_container {
     list-style: none;
-    margin: 32px;
+    margin: 16px;
     overflow-y: auto;
 }
 
@@ -146,7 +151,7 @@ header i:hover {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 10px 10px 10px 15px;
+    padding: 10px;
     border-bottom: 1px solid #f6f6f6;
     transition: background-color .2s linear;
     cursor: pointer;
@@ -221,11 +226,13 @@ header i:hover {
     margin-bottom: 10px;
     margin-top: 10px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-content: center;
     max-width: 155px;
     min-height: 50px;
     font-size: 14px;
-    padding: 15px 5px 5px 10px;
+    padding: 10px 15px;
     border-radius: 8px;
 }
 
@@ -270,7 +277,7 @@ footer .new-message {
 } 
 
 footer i:hover {
-    color: #0bceba;
+    color: #009688;
 }
   
 .icon-left {
