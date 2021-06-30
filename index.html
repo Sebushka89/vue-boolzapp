@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Boolzap</title>
+    <!-- Stylesheet -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+  <body>
+
+    <!-- Contenitore generale -->
+    <div id="app">
+
+      <!-- Contenitore principale -->
+        <div id="box">
+            <div class="side">
+                <header class="side-header">
+
+                    <div class="side-user">
+                        <img src="img/avatar_io.jpg" alt="avatar">
+                        <div class="informations">
+                            <h4>Michelle</h4>
+                        </div>
+                    </div>
+
+                    <!-- Side icone -->
+                    <div class="icons">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                    </div>
+
+                </header>
+
+                <!-- Side main -->
+                <main>
+                    <section class="notice">
+                        <div class="bell">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+
+                        <div class="informations">
+                            <h4>Ricevi notifiche di nuovi messaggi</h4>
+                            <p>Attiva notifiche desktop</p>
+                        </div>
+                    </section>
+
+                    <!-- Sezione input chat -->
+                    <section class="new-chat_container">
+                        <div class="new-chat_icon">
+                            <label for="new-chat">
+                            <i class="fas fa-search"></i>
+                            </label>
+                        </div>
+
+                        <input type="text" id="new-chat" name="new-chat" class="new-chat" placeholder="Cerca o inizia una nuova chat">
+                    </section>
+
+                    <!-- Sezione contatti -->
+                    <section class="contacts_container">
+                        <ul class="contacts">
+                            
+                            <li v-for='contatto in contacts' class="contact">
+                                <div class="contacts-user">
+                                    <img :src="'img/avatar'+ contatto.avatar +'.jpg'" alt="avatar">
+                                    <div class="informations">
+                                        <h4>{{contatto.name}}</h4>
+                                    </div>
+                                </div>
+                                <span class="contacts_last-chat">17.53</span>
+                            </li>
+
+                        </ul>
+
+                    </section>
+
+                </main>
+
+            </div>
+
+                <!-- Contents box -->
+            <div class="contents">
+                <header class="contents-header">
+                    <div class="contents-user" >
+                        <img src="img/avatar_1.jpg" alt="avatar">
+                        <div class="informations">
+                            <h4>Michele</h4>
+                            <p>Ultimo accesso oggi alle 15.40</p>
+                        </div>
+                    </div>
+
+                    <!-- Contents icone -->
+                    <div class="icons">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+
+                </header>
+
+                <!-- Contents main -->
+                <main class="contents-main">
+
+                    <!-- Messaggi chat -->
+                    <ul class="container-messages ">
+                        
+                        <li class="message sent">
+                            <p>Hai portato a spasso il cane?</p>
+                            <span>06:20</span>
+                        </li>
+
+                        <li class="message sent">
+                            <p>Ricordati di dargli da mangiare</p>
+                            <span>06:20</span>
+                        </li>
+
+                        <li class="message received">
+                            <p>Tutto fatto!</p>
+                            <span>14:21</span>
+                        </li>
+
+                    </ul>
+
+                </main>
+
+                <!-- Contents footer -->
+                <footer>
+                    
+                    <i class="far fa-smile icon-left"></i>
+                    
+                    <input type="text" class="new-message" placeholder="Scrivi un messaggio">
+                    
+                    <i class="fas fa-microphone icon-right active"></i>
+                    <i class="fas fa-paper-plane icon-right"></i>
+                    
+                </footer>
+            </div>    
+            
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
