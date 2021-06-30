@@ -54,10 +54,10 @@ header i:hover {
 
 .side {
     height: 100%;
-    width: 35%;
+    width: 100%;
     background-color: #fff;
     border-right: 1px solid #d6d6d6;
-    overflow-y: auto;
+    overflow: hidden ;
 }
 
 .side ul{
@@ -141,7 +141,8 @@ header i:hover {
 .contacts_container {
     list-style: none;
     margin: 16px;
-    overflow-y: auto;
+    overflow: hidden ;
+    overflow-y: scroll;
 }
 
 .contacts{
@@ -186,7 +187,7 @@ header i:hover {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 65%;
+    width: 100%;
     background-color: #eaeaea;
 }
 
