@@ -52,7 +52,7 @@ header i:hover {
 }
 
 .icons i {
-    margin-right: 6px;
+    margin-right: 12px;
 }
 
 .side {
@@ -83,6 +83,10 @@ ul{
 
 .notice:hover {
     background-color: #009688;
+}
+
+.informations{
+    padding-left: 12px;
 }
 
 .notice .informations p {
@@ -150,7 +154,7 @@ ul{
 .contacts{
     margin: 0!important;
     overflow-y: auto;
-    height: calc(100vh - 216px);
+    height: calc(100vh - 350px);
 }
 .contacts li {
     display: flex;
