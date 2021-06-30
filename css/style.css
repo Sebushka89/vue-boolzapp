@@ -138,11 +138,10 @@ header i:hover {
     font-weight: 700;
 }
 
-.contacts_container {
+.contacts-container {
     list-style: none;
     margin: 16px;
-    overflow: hidden ;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .contacts{
