@@ -92,13 +92,14 @@ var app = new Vue (
             activeContact: 0,
         },
         methods: { 
-
             // collega la colonna di sinistra 
             // con la colonna di destra 
             // tramite un index
             setActiveContact(index) {
                 this.activeContact = index;
             },
+            // funzione per poter aggiungere un testo
+            // solo se viene scritto qualcosa nel input
             addMessage: function(activeContact){
                 const arrayMessages = this.contacts[activeContact].messages;
                 if(this.userMessage.length > 0){
@@ -121,8 +122,6 @@ var app = new Vue (
 
                 }, 1000)
             },
-          
-            
             // funzione per filtrare gli utenti 
             filteredContacts() {
                 
