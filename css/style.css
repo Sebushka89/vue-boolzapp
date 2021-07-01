@@ -265,9 +265,9 @@ ul{
 
 footer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 35px;
+    padding: 10px;
     background-color: #f3eeeb;
 }
 
