@@ -124,11 +124,11 @@ var app = new Vue (
                             status: 'received'
     
                         });
-    
-                    }, 1000)
-                }
 
-            },
+                    }, 1000)
+
+                }
+           },
             // funzione per filtrare gli utenti 
             filteredContacts() {
                 
@@ -150,7 +150,7 @@ var app = new Vue (
                 const opt = [
                     'Ok',
                     'Ma sei davvero sicuro?',
-                    'E\' se poi te ne penti?',
+                    'E se poi te ne penti?',
                     'Non credevo di farcela',
                     'Incredibile',
                     'Portami al mare',
