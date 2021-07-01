@@ -88,12 +88,23 @@ var app = new Vue (
                 },
             ],
             userFiltered: '',
+            userMessage: '',
+            activeContact: 0,
         },
-        methods: {
+        methods: { 
+
+            // collega la colonna di sinistra 
+            // con la colonna di destra 
+            // tramite un index
+            setActiveContact(index) {
+                this.activeContact = index;
+            },
+            
             // funzione per filtrare gli utenti 
             filteredContacts() {
                 
-                this.contacts.forEach((contatto) => {
+                this.contacts.forEach((contatto) =>
+                {
                     const contattoNameLowerCase = contatto.name.toLowerCase();
                     const userFilteredLowerCase = this.userFiltered.toLowerCase();
 
@@ -103,9 +114,10 @@ var app = new Vue (
                         contatto.visible = false;
                     }
                     console.log(contatto.visible)
-                } );
+                });
+        
             }
-        }
+        }    
     }
 )
 
