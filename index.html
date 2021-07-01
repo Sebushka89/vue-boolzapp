@@ -58,14 +58,16 @@
                                 </label>
                             </div>
     
-                            <input type="text" id="new-chat" name="new-chat" class="new-chat" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" id="new-chat" name="new-chat" class="new-chat" placeholder="Cerca o inizia una nuova chat"
+                             v-model="userFiltered"
+                            @keyup="filteredContacts">
                         </section>
     
                         <!-- Sezione contatti -->
                         <div class="contacts-container">
                             <ul class="contacts">
                                 
-                                <li v-for='contatto in contacts'>
+                                <li v-for='(contatto, index) in contacts' v-if="contatto.visible == true" >
                                     <div class="contacts-user">
                                         <img class="d-none d-md-block" :src="'img/avatar'+ contatto.avatar +'.jpg'" alt="avatar">
                                         <div class="informations">

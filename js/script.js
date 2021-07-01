@@ -86,7 +86,26 @@ var app = new Vue (
                         }
                     ],
                 },
-            ]
+            ],
+            userFiltered: '',
         },
+        methods: {
+            // funzione per filtrare gli utenti 
+            filteredContacts() {
+                
+                this.contacts.forEach((contatto) => {
+                    const contattoNameLowerCase = contatto.name.toLowerCase();
+                    const userFilteredLowerCase = this.userFiltered.toLowerCase();
+
+                    if( contattoNameLowerCase.includes(userFilteredLowerCase) ) {
+                        contatto.visible = true;
+                    } else{
+                        contatto.visible = false;
+                    }
+                    console.log(contatto.visible)
+                } );
+            }
+        }
     }
-);
+)
+
