@@ -93,7 +93,7 @@ var app = new Vue (
         },
         mounted () {
             this.$refs.focusMe.focus()
-          },
+        },
         methods: { 
             // collega la colonna di sinistra 
             // con la colonna di destra 
