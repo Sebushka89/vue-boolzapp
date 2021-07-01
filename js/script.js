@@ -91,6 +91,9 @@ var app = new Vue (
             userMessage: '',
             activeContact: 0,
         },
+        mounted () {
+            this.$refs.focusMe.focus()
+          },
         methods: { 
             // collega la colonna di sinistra 
             // con la colonna di destra 
@@ -108,19 +111,23 @@ var app = new Vue (
                         text: this.userMessage,
                         status: 'sent'
                     });
+                    this.userMessage = ''; 
+    
+                    let x = this.answerGen();
+    
+                    setTimeout( () => {
+    
+                        arrayMessages.push ({
+    
+                            date: '10/01/2020 15:50:00',
+                            text: x,
+                            status: 'received'
+    
+                        });
+    
+                    }, 1000)
                 }
-                this.userMessage = '';
-                setTimeout( () => {
 
-                    arrayMessages.push ({
-
-                        date: '10/01/2020 15:50:00',
-                        text: 'ok',
-                        status: 'received'
-
-                    });
-
-                }, 1000)
             },
             // funzione per filtrare gli utenti 
             filteredContacts() {
@@ -138,7 +145,24 @@ var app = new Vue (
                     console.log(contatto.visible)
                 });
                 
-            }
+            },
+            answerGen: function() {
+                const opt = [
+                    'Ok',
+                    'Ma sei davvero sicuro?',
+                    'E\' se poi te ne penti?',
+                    'Non credevo di farcela',
+                    'Incredibile',
+                    'Portami al mare',
+                    'Ma se Maometto non va alla montagna?',
+                    'Vediamo come esce fuori il testo',
+                    'Se al improvviso mi partisse un lorem ipsum super random ti arrabbieresti?',
+                    'Nel mezzo del cammin di nostra vita mi ritrovai per una selva oscura, ché la diritta via era smarrita.',
+                    'I am Batman'
+                  ];
+                let x = opt[Math.floor(Math.random() * opt.length)];
+                return x;
+            },
         }    
     }
 )
