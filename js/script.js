@@ -99,6 +99,29 @@ var app = new Vue (
             setActiveContact(index) {
                 this.activeContact = index;
             },
+            addMessage: function(activeContact){
+                const arrayMessages = this.contacts[activeContact].messages;
+                if(this.userMessage.length > 0){
+                    arrayMessages.push({
+                        date: '10/01/2020 15:50:00',
+                        text: this.userMessage,
+                        status: 'sent'
+                    });
+                }
+                this.userMessage = '';
+                setTimeout( () => {
+
+                    arrayMessages.push ({
+
+                        date: '10/01/2020 15:50:00',
+                        text: 'ok',
+                        status: 'received'
+
+                    });
+
+                }, 1000)
+            },
+          
             
             // funzione per filtrare gli utenti 
             filteredContacts() {
@@ -115,7 +138,7 @@ var app = new Vue (
                     }
                     console.log(contatto.visible)
                 });
-        
+                
             }
         }    
     }

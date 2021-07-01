@@ -111,7 +111,7 @@
                         <!-- Messaggi chat -->
                         <ul class="container-messages ">
                             
-                            <li class="message " :class="message.status"  v-for="message in contacts[activeContact].messages" >
+                            <li class="message " :class="message.status"  v-for="(message,index) in contacts[activeContact].messages" >
                                 <p> {{ message.text }}</p>
                                 <span>{{ message.date }}</span>
                             </li>
@@ -127,7 +127,9 @@
                         
                         <i class="far fa-smile icon-left"></i>
                         
-                        <input type="text" class="new-message" placeholder="Scrivi un messaggio">
+                        <input type="text" class="new-message" placeholder="Scrivi un messaggio"
+                        v-model = "userMessage"
+                        @keyup.enter = "addMessage( activeContact )">
                         
                         <i class="fas fa-microphone icon-right active"></i>
                         
