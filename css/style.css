@@ -247,12 +247,52 @@ ul{
     border-radius: 8px;
 }
 
+.message .message-options {
+    position: absolute;
+    right: 20%;
+    top: 10%;
+    list-style: none;
+    text-align: center;
+    font-size: 14px;
+    width: 120px;
+    background-color: #fff;
+    z-index: 1001;
+    box-shadow: 2px 5px 10px #888888;
+}
+
+.hidden{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.message-options li{
+    cursor: pointer;
+}
+
+.message-options li:hover{
+    color: black;
+    border: 1px solid black;
+}
+
 .contents-main .container-messages .message span {
     align-self: flex-end;
     font-size: 10px;
     margin-left: 20px;
     color: #b7b9bb;
 }
+
+.message i{
+    opacity: 0;
+    cursor: pointer;
+}
+
+.message:hover i{
+    opacity: 1;
+}
+
 
 .contents-main .container-messages .message.sent {
     float: right;

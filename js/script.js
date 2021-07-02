@@ -90,6 +90,7 @@ var app = new Vue (
             userFiltered: '',
             userMessage: '',
             activeContact: 0,
+            contentClass: 'hidden'
         },
         mounted () {
             this.$refs.focusMe.focus()
@@ -100,35 +101,50 @@ var app = new Vue (
             // tramite un index
             setActiveContact(index) {
                 this.activeContact = index;
+                this.$refs.focusMe.focus()
+                setTimeout(() => {
+                    document.querySelector('.message:last-child').scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+                },);
+                
             },
             // funzione per poter aggiungere un testo
             // solo se viene scritto qualcosa nel input
-            addMessage: function(activeContact){
-                const arrayMessages = this.contacts[activeContact].messages;
+            addMessage: function(){
+
+                const time = dayjs();
+                const dateTimeString = time.format('DD/MM/YYYY HH:mm:ss');
+                const arrayMessages = this.contacts[this.activeContact].messages;
+
                 if(this.userMessage.length > 0){
                     arrayMessages.push({
-                        date: '10/01/2020 15:50:00',
+                        date: dateTimeString,
                         text: this.userMessage,
                         status: 'sent'
                     });
-                    this.userMessage = ''; 
-    
+                    this.userMessage = '';
+                    setTimeout(() => {
+                        document.querySelector('.message:last-child').scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+                    },);
                     let x = this.answerGen();
+
     
                     setTimeout( () => {
     
                         arrayMessages.push ({
     
-                            date: '10/01/2020 15:50:00',
+                            date: dateTimeString,
                             text: x,
                             status: 'received'
     
                         });
 
+                        setTimeout(() => {
+                            document.querySelector('.message:last-child').scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+                        },);
                     }, 1000)
-
+                
                 }
-           },
+            },
             // funzione per filtrare gli utenti 
             filteredContacts() {
                 
@@ -162,6 +178,15 @@ var app = new Vue (
                   ];
                 let x = opt[Math.floor(Math.random() * opt.length)];
                 return x;
+            },
+            showElement: function(){
+                if(this.contentClass === 'hidden')
+                {this.contentClass = 'show'}else{
+                    this.contentClass = 'hidden'
+                }   
+            },
+            deleteMessage: function(activeContact) {
+                this.contacts[this.activeContact].messages.splice(activeContact,1);
             },
         }    
     }

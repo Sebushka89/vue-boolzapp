@@ -111,15 +111,19 @@
                         <!-- Messaggi chat -->
                         <ul class="container-messages ">
                             
-                            <li class="message " :class="message.status"  v-for="(message,index) in contacts[activeContact].messages" >
+                            <li class="message" :class="message.status"  v-for="(message,index) in contacts[activeContact].messages" >
+                                <span><i class="fas fa-chevron-down" @click='showElement'></i>
+                                    <ul :class="contentClass" class="message-options">
+                                        <li>Info messaggio</li>
+                                        <li @click="deleteMessage(index)">Cancella messaggio</li>
+                                    </ul>
+                                </span>
                                 <p> {{ message.text }}</p>
                                 <span>{{ message.date }}</span>
                             </li>
        
                         </ul>
 
-                    
-    
                     </main>
     
                     <!-- Contents footer -->
@@ -144,5 +148,6 @@
     </div>
 
     <script src="js/script.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
   </body>
 </html>
