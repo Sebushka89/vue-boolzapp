@@ -74,7 +74,7 @@
                                             <h4>{{contatto.name}}</h4>
                                         </div>
                                     </div>
-                                    <span class="contacts_last-chat">17.53</span>
+                                    <span class="contacts_last-chat">{{ lastDateMessage(index) }}</span>
                                 </li>
     
                             </ul>
@@ -92,7 +92,7 @@
                             <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'"  alt="avatar">
                             <div class="informations d-none d-md-block">
                                 <h4>{{contacts[activeContact].name}}</h4>
-                                <p>Ultimo accesso oggi alle 15.40</p>
+                                <p>Ultimo accesso {{ lastDateMessage(activeContact) }}</p>
                             </div>
                         </div>
     

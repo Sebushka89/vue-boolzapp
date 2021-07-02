@@ -191,6 +191,12 @@ var app = new Vue (
             deleteMessage: function(activeContact) {
                 this.contacts[this.activeContact].messages.splice(activeContact,1);
             },
+            lastDateMessage: function(Index) {
+                //console.log(Index);
+                let lastDate = this.contacts[Index].messages.length - 1;
+            
+                return this.contacts[Index].messages[lastDate].date;
+            },
         }    
     }
 )
