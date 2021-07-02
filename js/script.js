@@ -90,7 +90,8 @@ var app = new Vue (
             userFiltered: '',
             userMessage: '',
             activeContact: 0,
-            contentClass: 'hidden'
+            chevIsClicked: false,
+            msgIndex: '',
         },
         mounted () {
             this.$refs.focusMe.focus()
@@ -179,11 +180,13 @@ var app = new Vue (
                 let x = opt[Math.floor(Math.random() * opt.length)];
                 return x;
             },
-            showElement: function(){
-                if(this.contentClass === 'hidden')
-                {this.contentClass = 'show'}else{
-                    this.contentClass = 'hidden'
-                }   
+            showElement: function (index) {
+                if (this.chevIsClicked === false) {
+                    this.chevIsClicked = true;
+                } else {
+                    this.chevIsClicked = false;
+                }
+                this.msgIndex = index;
             },
             deleteMessage: function(activeContact) {
                 this.contacts[this.activeContact].messages.splice(activeContact,1);

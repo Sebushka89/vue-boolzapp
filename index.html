@@ -112,8 +112,8 @@
                         <ul class="container-messages ">
                             
                             <li class="message" :class="message.status"  v-for="(message,index) in contacts[activeContact].messages" >
-                                <span><i class="fas fa-chevron-down" @click='showElement'></i>
-                                    <ul :class="contentClass" class="message-options">
+                                <span><i class="fas fa-chevron-down" @click='showElement(index)'></i>
+                                    <ul  v-if="chevIsClicked && msgIndex == index" v-if="chevIsClicked && msgIndex == index" class="message-options">
                                         <li>Info messaggio</li>
                                         <li @click="deleteMessage(index)">Cancella messaggio</li>
                                     </ul>

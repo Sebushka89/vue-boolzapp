@@ -260,21 +260,12 @@ ul{
     box-shadow: 2px 5px 10px #888888;
 }
 
-.hidden{
-    display: none;
-}
-
-.show{
-    display: block;
-}
-
 .message-options li{
     cursor: pointer;
 }
 
 .message-options li:hover{
     color: black;
-    border: 1px solid black;
 }
 
 .contents-main .container-messages .message span {
