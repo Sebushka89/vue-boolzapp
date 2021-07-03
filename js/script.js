@@ -102,6 +102,7 @@ var app = new Vue (
             // tramite un index
             setActiveContact(index) {
                 this.activeContact = index;
+                this.chevIsClicked = false;
                 this.$refs.focusMe.focus()
                 setTimeout(() => {
                     document.querySelector('.message:last-child').scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
