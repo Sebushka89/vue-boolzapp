@@ -13,12 +13,11 @@
   <body>
 
     <!-- Contenitore generale -->
-    <div  class="container-fluid" id="app">
-
+    <div  class="container-fluid" :class='isContentClass' id="app">
       <!-- Contenitore principale -->
-        <div class="container " id="box">
+        <div class="container" id="box">
             <div class="row">
-                <div class="side col-4 p-0">
+                <div class="side col-4 p-0" :class='isContentClass'>
                     <header class="side-header">
     
                         <div class="side-user">
@@ -58,7 +57,7 @@
                                 </label>
                             </div>
     
-                            <input type="text" id="new-chat" name="new-chat" class="new-chat" placeholder="Cerca o inizia una nuova chat"
+                            <input type="text" :class='isContentClass' id="new-chat" name="new-chat" class="new-chat" placeholder="Cerca o inizia una nuova chat"
                             v-model="userFiltered"
                             @keyup="filteredContacts">
                         </section>
@@ -67,7 +66,7 @@
                         <div class="contacts-container">
                             <ul class="contacts">
                                 
-                                <li v-for='(contatto, index) in contacts' v-if="contatto.visible == true" @click="setActiveContact(index)" >
+                                <li :class='isContentClass' v-for='(contatto, index) in contacts' v-if="contatto.visible == true" @click="setActiveContact(index)" >
                                     <div class="contacts-user">
                                         <img class="d-none d-md-block" :src="'img/avatar'+ contatto.avatar +'.jpg'" alt="avatar">
                                         <div class="informations">
@@ -76,9 +75,7 @@
                                     </div>
                                     <span class="contacts_last-chat">{{ lastDateMessage(index) }}</span>
                                 </li>
-    
                             </ul>
-    
                         </div>
     
                     </main>
@@ -101,12 +98,12 @@
                             <i class="fas fa-search"></i>
                             <i class="fas fa-paperclip"></i>
                             <i class="fas fa-ellipsis-v"></i>
+                            <i class="fas fa-moon" @click='changeTheme'></i>
                         </div>
-    
                     </header>
     
                     <!-- Contents main -->
-                    <main class="contents-main">
+                    <main class="contents-main" :class='isContentClass'>
     
                         <!-- Messaggi chat -->
                         <ul class="container-messages ">
@@ -127,11 +124,11 @@
                     </main>
     
                     <!-- Contents footer -->
-                    <footer>
+                    <footer :class='isContentClass'>
                         
                         <i class="far fa-smile icon-left"></i>
                         
-                        <input type="text" class="new-message" placeholder="Scrivi un messaggio" ref='focusMe'
+                        <input type="text" :class='isContentClass' class="new-message" placeholder="Scrivi un messaggio" ref='focusMe'
                         v-model = "userMessage"
                         @keyup.enter = "addMessage( activeContact )">
                         

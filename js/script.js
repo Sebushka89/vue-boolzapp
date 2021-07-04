@@ -92,6 +92,7 @@ var app = new Vue (
             activeContact: 0,
             openModal: false,
             msgIndex: '',
+            isContentClass: ''
         },
         mounted () {
             this.$refs.focusMe.focus()
@@ -191,6 +192,8 @@ var app = new Vue (
             },
             deleteMessage: function(activeContact) {
                 this.contacts[this.activeContact].messages.splice(activeContact,1);
+                this.openModal=false;
+                
             },
             lastDateMessage: function(Index) {
                 //console.log(Index);
@@ -198,6 +201,14 @@ var app = new Vue (
             
                 return this.contacts[Index].messages[lastDate].date;
             },
+            changeTheme: function(){
+                if(this.isContentClass===''){
+                this.isContentClass = 'active'}
+                else{
+                    this.isContentClass=''
+                }
+                
+            }
 
         }    
     }
