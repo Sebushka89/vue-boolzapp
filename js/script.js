@@ -90,7 +90,7 @@ var app = new Vue (
             userFiltered: '',
             userMessage: '',
             activeContact: 0,
-            chevIsClicked: false,
+            openModal: false,
             msgIndex: '',
         },
         mounted () {
@@ -102,7 +102,7 @@ var app = new Vue (
             // tramite un index
             setActiveContact(index) {
                 this.activeContact = index;
-                this.chevIsClicked = false;
+                this.openModal = false;
                 this.$refs.focusMe.focus()
                 setTimeout(() => {
                     document.querySelector('.message:last-child').scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
@@ -182,10 +182,10 @@ var app = new Vue (
                 return x;
             },
             showElement: function (index) {
-                if (this.chevIsClicked === false) {
-                    this.chevIsClicked = true;
+                if (this.openModal === false) {
+                    this.openModal = true;
                 } else {
-                    this.chevIsClicked = false;
+                    this.openModal = false;
                 }
                 this.msgIndex = index;
             },
@@ -198,6 +198,7 @@ var app = new Vue (
             
                 return this.contacts[Index].messages[lastDate].date;
             },
+
         }    
     }
 )
