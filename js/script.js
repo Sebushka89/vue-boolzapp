@@ -196,9 +196,12 @@ var app = new Vue (
                 
             },
             lastDateMessage: function(Index) {
-                //console.log(Index);
+                //console.log(newIndex);
                 let lastDate = this.contacts[Index].messages.length - 1;
-            
+                //console.log(lunghezza);
+                if(lastDate == -1){
+                    return "Nessun accesso oggi";
+                } 
                 return this.contacts[Index].messages[lastDate].date;
             },
             changeTheme: function(){
@@ -206,6 +209,17 @@ var app = new Vue (
                 this.isContentClass = 'active'}
                 else{
                     this.isContentClass=''
+                }
+                
+            },
+            lastTextMessage: function(index) {
+
+                let lastTextMessage = this.contacts[index].messages;
+
+                if (lastTextMessage.length === 0) {
+                    return '';
+                } else {
+                    return lastTextMessage[lastTextMessage.length - 1].text;
                 }
                 
             }

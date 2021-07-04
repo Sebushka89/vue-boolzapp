@@ -18,7 +18,7 @@
         <div class="container" id="box">
             <div class="row">
                 <div class="side col-4 p-0" :class='isContentClass'>
-                    <header class="side-header">
+                    <header class="side-header" :class='isContentClass'>
     
                         <div class="side-user">
                             <img src="img/avatar_8.jpg" alt="avatar">
@@ -71,6 +71,7 @@
                                         <img class="d-none d-md-block" :src="'img/avatar'+ contatto.avatar +'.jpg'" alt="avatar">
                                         <div class="informations">
                                             <h4>{{contatto.name}}</h4>
+                                            <p :class='isContentClass'>{{lastTextMessage(index) }}</p>
                                         </div>
                                     </div>
                                     <span class="contacts_last-chat">{{ lastDateMessage(index) }}</span>
@@ -84,12 +85,12 @@
     
                 <!-- Contents box -->
                 <div class="contents col-8 p-0">
-                    <header class="contents-header">
+                    <header class="contents-header" :class='isContentClass'>
                         <div class="contents-user" >
                             <img :src="'img/avatar' + contacts[activeContact].avatar + '.jpg'"  alt="avatar">
                             <div class="informations d-none d-md-block">
                                 <h4>{{contacts[activeContact].name}}</h4>
-                                <p>Ultimo accesso {{ lastDateMessage(activeContact) }}</p>
+                                <p>{{ lastDateMessage(activeContact) }}</p>
                             </div>
                         </div>
     
